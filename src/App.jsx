@@ -37,14 +37,14 @@ function App() {
             className={["tab-pill", activePlan === "main" ? "tab-pill--active" : ""].join(" ")}
             onClick={() => handlePlanChange("main")}
           >
-            Main Plan
+            For Johnny
           </button>
           <button
             type="button"
             className={["tab-pill", activePlan === "nano" ? "tab-pill--active" : ""].join(" ")}
             onClick={() => handlePlanChange("nano")}
           >
-            For Nano
+            For Nano 💗
           </button>
         </div>
       </header>
