@@ -2,14 +2,14 @@
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  color: #e5e7eb;
+  color: #0f172a;
 }
 
 .app-header {
   padding: 1.5rem 2rem;
-  border-bottom: 1px solid rgba(148, 163, 184, 0.4);
-  background: linear-gradient(to right, rgba(15, 23, 42, 0.9), rgba(30, 64, 175, 0.7));
-  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(209, 213, 219, 0.8);
+  background: linear-gradient(to right, #e0f2fe, #dbeafe);
+  backdrop-filter: blur(10px);
   position: sticky;
   top: 0;
   z-index: 10;
@@ -17,12 +17,12 @@
 
 .app-header h1 {
   margin: 0 0 0.25rem;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
 }
 
 .subtitle {
   margin: 0;
-  color: #cbd5f5;
+  color: #4b5563;
   font-size: 0.9rem;
 }
 
@@ -34,10 +34,10 @@
 }
 
 .day-list {
-  background: rgba(15, 23, 42, 0.9);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 1rem;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.07);
   padding: 1rem;
   display: flex;
   flex-direction: column;
@@ -59,7 +59,7 @@
 .day-list-header p {
   margin: 0;
   font-size: 0.8rem;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 .day-grid {
@@ -74,8 +74,8 @@
 .day-button {
   border-radius: 0.75rem;
   padding: 0.6rem 0.5rem;
-  background: rgba(15, 23, 42, 0.95);
-  border: 1px solid rgba(148, 163, 184, 0.4);
+  background: #f9fafb;
+  border: 1px solid rgba(229, 231, 235, 0.9);
   color: inherit;
   cursor: pointer;
   display: flex;
@@ -87,21 +87,21 @@
 }
 
 .day-button--n5 {
-  border-color: rgba(74, 222, 128, 0.7);
+  border-color: rgba(34, 197, 94, 0.8);
 }
 
 .day-button--n4 {
-  border-color: rgba(59, 130, 246, 0.7);
+  border-color: rgba(59, 130, 246, 0.8);
 }
 
 .day-button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.8);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
 }
 
 .day-button--active {
   background: linear-gradient(to bottom right, #3b82f6, #22c55e);
-  color: #0b1020;
+  color: #f9fafb;
   border-color: transparent;
 }
 
@@ -115,10 +115,10 @@
 }
 
 .lesson-panel {
-  background: rgba(15, 23, 42, 0.9);
+  background: #ffffff;
   border-radius: 1rem;
-  border: 1px solid rgba(148, 163, 184, 0.5);
-  box-shadow: 0 18px 50px rgba(15, 23, 42, 0.7);
+  border: 1px solid rgba(229, 231, 235, 0.9);
+  box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
   padding: 1.25rem 1.5rem 1.5rem;
   max-height: calc(100vh - 7rem);
   display: flex;
@@ -130,7 +130,7 @@
   display: flex;
   justify-content: space-between;
   align-items: baseline;
-  border-bottom: 1px solid rgba(75, 85, 99, 0.8);
+  border-bottom: 1px solid rgba(229, 231, 235, 1);
   padding-bottom: 0.75rem;
   margin-bottom: 0.75rem;
 }
@@ -138,7 +138,7 @@
 .lesson-day-label {
   margin: 0;
   font-size: 0.85rem;
-  color: #9ca3af;
+  color: #6b7280;
   text-transform: uppercase;
   letter-spacing: 0.08em;
 }
@@ -146,6 +146,7 @@
 .lesson-header h2 {
   margin: 0.25rem 0 0;
   font-size: 1.25rem;
+  color: #111827;
 }
 
 .lesson-content {
@@ -160,7 +161,7 @@
 .lesson-section h3 {
   margin: 0 0 0.5rem;
   font-size: 1rem;
-  color: #e5e7eb;
+  color: #111827;
 }
 
 .grammar-list {
@@ -175,19 +176,20 @@
 .grammar-item {
   padding: 0.6rem 0.75rem;
   border-radius: 0.75rem;
-  background: rgba(15, 23, 42, 0.8);
-  border: 1px solid rgba(55, 65, 81, 0.9);
+  background: #f9fafb;
+  border: 1px solid rgba(229, 231, 235, 1);
 }
 
 .grammar-item h4 {
   margin: 0 0 0.25rem;
   font-size: 0.95rem;
+  color: #111827;
 }
 
 .grammar-explanation {
   margin: 0 0 0.35rem;
   font-size: 0.85rem;
-  color: #d1d5db;
+  color: #4b5563;
 }
 
 .example-list {
@@ -212,9 +214,9 @@
 
 .vocab-table-wrapper {
   border-radius: 0.75rem;
-  border: 1px solid rgba(55, 65, 81, 0.9);
+  border: 1px solid rgba(229, 231, 235, 1);
   overflow: auto;
-  background: rgba(15, 23, 42, 0.85);
+  background: #f9fafb;
 }
 
 .vocab-table {
@@ -224,7 +226,7 @@
 }
 
 .vocab-table thead {
-  background: rgba(31, 41, 55, 0.9);
+  background: #eff6ff;
 }
 
 .vocab-table th,
@@ -237,7 +239,7 @@
   text-align: left;
   font-weight: 600;
   font-size: 0.8rem;
-  color: #e5e7eb;
+  color: #1f2937;
 }
 
 .vocab-table td.jp {
@@ -254,14 +256,14 @@
 .notes {
   margin: 0;
   font-size: 0.9rem;
-  color: #d1d5db;
+  color: #4b5563;
 }
 
 .app-footer {
-  border-top: 1px solid rgba(55, 65, 81, 0.9);
+  border-top: 1px solid rgba(209, 213, 219, 0.9);
   padding: 0.75rem 2rem 1rem;
   font-size: 0.8rem;
-  color: #9ca3af;
+  color: #6b7280;
 }
 
 @media (max-width: 900px) {
