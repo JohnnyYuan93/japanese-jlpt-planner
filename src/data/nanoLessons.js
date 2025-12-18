@@ -207,6 +207,101 @@ export const nanoLessons = [
       { word: "复习", reading: "fùxí", meaning: "復習する", exampleJa: "今天复习一到六天的内容。", exampleEn: "今日は1〜6日の内容を復習しよう。" }
     ],
     notes: "音読・録音で声調チェック。Yes/No質問→返し、所在説明、欲求+提案の流れを口で再現。"
+  },
+  {
+    id: 8,
+    dayNumber: 8,
+    level: "Daily Talk",
+    title: "打招呼 + 状態を聞く",
+    grammarPoints: [
+      {
+        name: "最近怎么样？/ 你好吗？",
+        explanation: "「最近どう？」「元気？」日常の入り口に使う。",
+        examples: [
+          { ja: "最近怎么样？", en: "最近どう？" },
+          { ja: "我很好，你呢？", en: "私は元気だよ、君は？" }
+        ]
+      },
+      {
+        name: "有点儿 + 形容詞",
+        explanation: "「ちょっと〜だ」（多くはネガティブニュアンス）。",
+        examples: [
+          { ja: "我有点儿累。", en: "ちょっと疲れた。" },
+          { ja: "今天有点儿冷。", en: "今日は少し寒い。" }
+        ]
+      }
+    ],
+    vocabulary: [
+      { word: "最近", reading: "zuìjìn", meaning: "最近", exampleJa: "最近工作忙吗？", exampleEn: "最近仕事忙しい？" },
+      { word: "怎么样", reading: "zěnmeyàng", meaning: "どう？", exampleJa: "这本书怎么样？", exampleEn: "この本どう？" },
+      { word: "累", reading: "lèi", meaning: "疲れた", exampleJa: "我有点儿累。", exampleEn: "ちょっと疲れた。" },
+      { word: "开心", reading: "kāixīn", meaning: "嬉しい/楽しい", exampleJa: "我很开心。", exampleEn: "とても嬉しい。" },
+      { word: "还好", reading: "hái hǎo", meaning: "まあまあ/大丈夫", exampleJa: "还好，不算忙。", exampleEn: "まあまあ、そんなに忙しくないよ。" }
+    ],
+    notes: "挨拶→状態を聞く→返す を2往復練習。声調とリズムを録音チェック。"
+  },
+  {
+    id: 9,
+    dayNumber: 9,
+    level: "Daily Talk",
+    title: "点餐・飲み物を頼む",
+    grammarPoints: [
+      {
+        name: "我要 + 名詞 / 想要 + 名詞",
+        explanation: "注文で使える「〜をください」「〜が欲しい」。",
+        examples: [
+          { ja: "我要一杯咖啡。", en: "コーヒーを一杯ください。" },
+          { ja: "想要冰的还是热的？", en: "アイスがいい？ホットがいい？" }
+        ]
+      },
+      {
+        name: "请 + 動詞",
+        explanation: "丁寧に依頼する「どうぞ〜してください」。",
+        examples: [
+          { ja: "请给我菜单。", en: "メニューをください。" }
+        ]
+      }
+    ],
+    vocabulary: [
+      { word: "菜单", reading: "càidān", meaning: "メニュー", exampleJa: "请给我菜单。", exampleEn: "メニューをください。" },
+      { word: "冰的", reading: "bīng de", meaning: "アイス(冷たい)", exampleJa: "我要冰的咖啡。", exampleEn: "アイスコーヒーをください。" },
+      { word: "热的", reading: "rè de", meaning: "ホット(温かい)", exampleJa: "我想要热的茶。", exampleEn: "ホットのお茶がほしい。" },
+      { word: "一杯", reading: "yì bēi", meaning: "一杯", exampleJa: "一杯奶茶。", exampleEn: "ミルクティー一杯。" },
+      { word: "再来", reading: "zài lái", meaning: "もう一つ/もう一杯", exampleJa: "再来一杯水，可以吗？", exampleEn: "水をもう一杯、いいですか？" }
+    ],
+    notes: "カフェ注文ロールプレイ2回。冰的/热的を聞かれたら即答する練習。"
+  },
+  {
+    id: 10,
+    dayNumber: 10,
+    level: "Daily Talk",
+    title: "時間約束・予定を決める",
+    grammarPoints: [
+      {
+        name: "什么时候 + 動詞？",
+        explanation: "「いつ〜する？」の基本形。",
+        examples: [
+          { ja: "你什么时候有空？", en: "いつ空いてる？" },
+          { ja: "我们什么时候见面？", en: "いつ会う？" }
+        ]
+      },
+      {
+        name: "…吧 / 好啊",
+        explanation: "提案と同意。「〜しよう」「いいね」。",
+        examples: [
+          { ja: "周末见面吧。", en: "週末会おうよ。" },
+          { ja: "好啊！", en: "いいね！" }
+        ]
+      }
+    ],
+    vocabulary: [
+      { word: "有空", reading: "yǒu kòng", meaning: "暇がある", exampleJa: "你明天有空吗？", exampleEn: "明日暇？" },
+      { word: "周末", reading: "zhōumò", meaning: "週末", exampleJa: "周末一起出去吧。", exampleEn: "週末一緒に出かけよう。" },
+      { word: "见面", reading: "jiànmiàn", meaning: "会う", exampleJa: "我们几点见面？", exampleEn: "何時に会う？" },
+      { word: "可以", reading: "kěyǐ", meaning: "いいよ / してもいい", exampleJa: "六点可以吗？", exampleEn: "6時でいい？" },
+      { word: "再说", reading: "zài shuō", meaning: "また後で決めよう", exampleJa: "明天再说吧。", exampleEn: "明日また話そう。" }
+    ],
+    notes: "「いつ空いてる？→週末どう？→何時どこ？」の流れを会話で練習し、録音して確認。"
   }
 ];
 

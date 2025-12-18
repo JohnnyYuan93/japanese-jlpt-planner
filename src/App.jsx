@@ -21,12 +21,14 @@ function App() {
   const todayLesson = planData.find((d) => d.dayNumber === selectedDay);
 
   return (
-    <div className="app">
+    <div className={`app ${activePlan === "nano" ? "theme-nano" : ""}`}>
       <header className="app-header">
         <div className="header-top">
           <h1>Japanese N5 &amp; N4 – 3 Month Planner</h1>
           <p className="subtitle">
-            Click a day to see today&apos;s grammar, vocabulary, and example sentences.
+            {activePlan === "nano"
+              ? "💗 For Nano"
+              : "Click a day to see today&apos;s grammar, vocabulary, and example sentences."}
           </p>
         </div>
         <div className="tab-row">
