@@ -12,40 +12,21 @@ In your terminal:
 ```bash
 cd /Users/jiapengyuan/Desktop/Project/japanese-jlpt-planner
 npm install
-npm run dev:all   # runs API + frontend together (see below)
+npm run dev
 ```
 
 Then open the URL shown in the terminal (usually `http://localhost:5173`).
-
-## Running with backend (progress + notes)
-
-- **Start both servers** (frontend + API):
-
-  ```bash
-  npm run dev:all
-  ```
-
-  This runs:
-  - Vite frontend on **http://localhost:5173**
-  - Express API on **http://localhost:3001** (proxied to `/api` by Vite)
-
-- API endpoints (SQLite stored in `server/db.sqlite`):
-  - `GET /api/health`
-  - `GET /api/progress` (list all saved days)
-  - `GET /api/progress/:day` (returns default not_started if none)
-  - `PUT /api/progress/:day` with `{ status: "not_started"|"in_progress"|"done", notes: "..." }`
-
-Progress and notes are saved locally in SQLite so you can practice backend CRUD without an external service.
 
 ## Project structure
 
 - `src/App.jsx` – main UI with:
   - list of **Day 1–90** buttons
   - right-hand panel showing the selected day
-  - progress + notes editor (calls `/api/progress/:day`)
 - `src/data/lessons.js` – the **3‑month plan**:
   - first week has detailed N5 content (grammar, vocab, example sentences)
   - `fullPlan` automatically extends this into 90 days with review/custom days
+- `src/data/nanoLessons.js` – 7-day “For Nano” plan (Japanese for Chinese speakers)
+- Switch tabs in the header (Main Plan / For Nano) to view each plan.
 
 You can edit `src/data/lessons.js` to:
 
