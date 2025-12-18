@@ -1,12 +1,65 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { fullPlan } from "./data/lessons.js";
 import "./App.css";
 
+const STATUS_OPTIONS = [
+  { value: "not_started", label: "Not started" },
+  { value: "in_progress", label: "In progress" },
+  { value: "done", label: "Done" }
+];
+
 function App() {
   const [selectedDay, setSelectedDay] = useState(1);
+  const [progress, setProgress] = useState({ status: "not_started", notes: "", updatedAt: null });
+  const [loadingProgress, setLoadingProgress] = useState(false);
+  const [saving, setSaving] = useState(false);
+  const [error, setError] = useState("");
 
   const handleSelectDay = (dayNumber) => {
     setSelectedDay(dayNumber);
+  };
+
+  useEffect(() => {
+    let isActive = true;
+    const fetchProgress = async () => {
+      setLoadingProgress(true);
+      setError("");
+      try {
+        const res = await fetch(`/api/progress/${selectedDay}`);
+        if (!res.ok) throw new Error("Failed to load progress");
+        const json = await res.json();
+        if (isActive) {
+          setProgress(json.data);
+        }
+      } catch (err) {
+        if (isActive) setError(err.message || "Failed to load progress");
+      } finally {
+        if (isActive) setLoadingProgress(false);
+      }
+    };
+    fetchProgress();
+    return () => {
+      isActive = false;
+    };
+  }, [selectedDay]);
+
+  const handleSave = async () => {
+    setSaving(true);
+    setError("");
+    try {
+      const res = await fetch(`/api/progress/${selectedDay}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ status: progress.status, notes: progress.notes })
+      });
+      if (!res.ok) throw new Error("Failed to save progress");
+      const json = await res.json();
+      setProgress(json.data);
+    } catch (err) {
+      setError(err.message || "Failed to save progress");
+    } finally {
+      setSaving(false);
+    }
   };
 
   const todayLesson = fullPlan.find((d) => d.dayNumber === selectedDay);
@@ -62,6 +115,62 @@ function App() {
               </header>
 
               <div className="lesson-content">
+                <section className="lesson-section progress-card">
+                  <div className="progress-header">
+                    <div>
+                      <h3>Progress &amp; notes</h3>
+                      <p className="muted">Save your status and thoughts for this day.</p>
+                    </div>
+                    <div className="status-pills">
+                      {STATUS_OPTIONS.map((opt) => (
+                        <button
+                          key={opt.value}
+                          type="button"
+                          className={[
+                            "status-pill",
+                            progress.status === opt.value ? "status-pill--active" : ""
+                          ]
+                            .filter(Boolean)
+                            .join(" ")}
+                          onClick={() => setProgress((p) => ({ ...p, status: opt.value }))}
+                        >
+                          {opt.label}
+                        </button>
+                      ))}
+                    </div>
+                  </div>
+                  <label className="notes-label" htmlFor="notes">
+                    Notes
+                  </label>
+                  <textarea
+                    id="notes"
+                    className="notes-input"
+                    value={progress.notes}
+                    onChange={(e) => setProgress((p) => ({ ...p, notes: e.target.value }))}
+                    placeholder="Write what you learned, tricky parts, or add your own sentences."
+                  />
+                  <div className="progress-actions">
+                    <div className="muted">
+                      {loadingProgress
+                        ? "Loading status..."
+                        : progress.updatedAt
+                          ? `Last saved: ${new Date(progress.updatedAt).toLocaleString()}`
+                          : "Not saved yet"}
+                    </div>
+                    <div className="action-row">
+                      {error && <span className="error-text">{error}</span>}
+                      <button
+                        type="button"
+                        className="save-button"
+                        onClick={handleSave}
+                        disabled={saving}
+                      >
+                        {saving ? "Saving..." : "Save progress"}
+                      </button>
+                    </div>
+                  </div>
+                </section>
+
                 <section className="lesson-section">
                   <h3>Grammar</h3>
                   {todayLesson.grammarPoints && todayLesson.grammarPoints.length > 0 ? (

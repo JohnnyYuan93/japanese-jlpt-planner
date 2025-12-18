@@ -3,16 +3,23 @@
   "version": "0.0.1",
   "private": true,
   "scripts": {
-    "dev": "vite",
+    "dev:web": "vite",
+    "dev:server": "nodemon server/index.js",
+    "dev:all": "concurrently \"npm run dev:server\" \"npm run dev:web\"",
     "build": "vite build",
     "preview": "vite preview"
   },
   "dependencies": {
+    "better-sqlite3": "^9.4.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
     "react": "^18.3.1",
     "react-dom": "^18.3.1"
   },
   "devDependencies": {
     "@vitejs/plugin-react": "^4.0.0",
+    "concurrently": "^8.2.2",
+    "nodemon": "^3.1.4",
     "vite": "^5.4.0"
   }
 }
