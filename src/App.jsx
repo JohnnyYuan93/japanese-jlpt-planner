@@ -24,7 +24,11 @@ function App() {
     <div className={`app ${activePlan === "nano" ? "theme-nano" : ""}`}>
       <header className="app-header">
         <div className="header-top">
-          <h1>Japanese N5 &amp; N4 – 3 Month Planner</h1>
+          <h1>
+          {activePlan === "nano"
+              ? "Chinese daily learning plan"
+              : "Japanese N5 &amp; N4 – 3 Month Planner"}
+          </h1>
           <p className="subtitle">
             {activePlan === "nano"
               ? "💗 For Nano"
